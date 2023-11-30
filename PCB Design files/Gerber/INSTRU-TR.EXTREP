@@ -1,0 +1,32 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: INSTRU-TR.GBR   11/16/2023  2:21:09 PM
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.gbr                Top Overlay                             
+.gbr                Top Paste                               
+.gbr                Top Solder                              
+.gbr                TOP                                     
+.gbr                BOTTOM                                  
+.gbr                Bottom Solder                           
+.gbr                Bottom Paste                            
+.gbr                Bottom Overlay                          
+.gbr                Top 3D                                  
+.gbr                Bottom 3D                               
+.gbr                Top 3D Body                             
+.gbr                BoardOutline                            
+.gbr                ManufacturingNotes                      
+.gbr                Top Courtyard                           
+.gbr                Bottom 3D Body                          
+.gbr                Mechanical 15                           
+.gbr                Bottom Courtyard                        
+.gbr                Top Assembly                            
+.gbr                Bottom Assembly                         
+.gbr                Keep-Out Layer                          
+.gbr                Top Pad Master                          
+.gbr                Bottom Pad Master                       
+.gbr                Profile                                 
+------------------------------------------------------------------------------------------

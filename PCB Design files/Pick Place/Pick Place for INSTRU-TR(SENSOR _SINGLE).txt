@@ -1,0 +1,41 @@
+Altium Designer Pick and Place Locations
+E:\ARUN PROJECTS\NEUPHONY\NEUPHONY-NEW-DESIGN\INSTRU-AMP\Project Outputs for INSTRU-AMP\SENSOR _SINGLE\Pick Place\Pick Place for INSTRU-TR(SENSOR _SINGLE).txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       16/11/23
+Time:       14:21
+Revision:   Not in VersionControl
+Variant:    SENSOR _SINGLE
+Units used: mm
+
+Designator Comment                Layer       Footprint      Center-X(mm) Center-Y(mm) Rotation Description                                                                                   
+R15        1K                     BottomLayer R0603          -0.0639      -17.4336     180      "RES SMD 1K OHM 1% 1/10W 0603"                                                                
+R14        100k                   TopLayer    R0603          -3.8532      -15.5009     180      "RES 100K OHM 1% 1/10W 0603"                                                                  
+R13        10k                    BottomLayer R0603          5.6371       -7.6573      180      "Res Thick Film 0603 10K Ohm 1% 1/10W ±100ppm/°C Molded SMD Punched Carrier T/R"              
+R10        100k                   BottomLayer R0603          5.6121       -9.1168      0        "RES 100K OHM 1% 1/10W 0603"                                                                  
+R17        0R                     TopLayer    R0603          10.0632      -21.2473     180      "RES SMD 0 OHM JUMPER 1/10W 0603"                                                             
+R2         49.9K                  BottomLayer R0603          5.6365       -16.3601     180      "SMD Chip Resistor, 49.9 kOhm, ± 1%, 100 mW, 0603 [1608 Metric], Thick Film, General Purpose" 
+D1         LED0603_30mA_2V_YELLOW TopLayer    LED0603_Yellow -0.1074      -16.1230     0        "WURTH ELEKTRONIK - 150060YS75000 - LED, Yellow, SMD, 0603, 30 mA, 2 V, 590 nm"               
+R8         0R                     TopLayer    R0603          6.9888       -21.2191     0        "RES SMD 0 OHM JUMPER 1/10W 0603"                                                             
+U3         LM828M5X/NOPB          BottomLayer SOT23-5        8.9552       -26.4291     0        "Switched Capacitor Voltage Converter 5-SOT-23 -40 to 85"                                     
+C11        10uF_10V               BottomLayer C0603          8.8992       -23.8073     0        "Cap Ceramic 10uF 10V X5R 10% Pad SMD 0603 85C T/R"                                           
+C10        10uF_10V               BottomLayer C0603          5.0888       -27.7026     180      "Cap Ceramic 10uF 10V X5R 10% Pad SMD 0603 85C T/R"                                           
+C9         0.1uF_25V              BottomLayer C0603          5.8888       -25.4615     90       "100nF Multilayer Ceramic Capacitor MLCC25 V; X7R Dielectric 0603 Surface Mount"              
+U1         TL084IDR               TopLayer    SOIC14         0.0000       -10.0000     180      "IC OPAMP JFET 3MHZ 14SOIC"                                                                   
+U2         INA826AIDR             TopLayer    SOIC-8_WINBOND 0.0971       -22.3613     0        "Precision, 200-µA Supply Current, 36-V Supply Instrumentation Amplifier 8-SOIC -40 to 125"   
+R12        500R                   TopLayer    R0603          -6.9693      -23.2076     0        "Res Thick Film 0603 499 Ohm 1% 1/10W ±100ppm/°C Molded SMD Paper T/R"                        
+R11        100K                   TopLayer    R0603          -6.9693      -24.6524     0        "RES 100K OHM 1% 1/10W 0603"                                                                  
+R7         33K                    BottomLayer R0603          5.6295       -12.0152     180      "Res Thick Film 0603 33K Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"                 
+R6         33K                    TopLayer    R0603          6.9887       -19.7613     0        "Res Thick Film 0603 33K Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"                 
+R5         100K                   TopLayer    R0603          -6.9693      -20.3179     0        "RES 100K OHM 1% 1/10W 0603"                                                                  
+R4         500R                   TopLayer    R0603          -6.9568      -21.7572     180      "Res Thick Film 0603 499 Ohm 1% 1/10W ±100ppm/°C Molded SMD Paper T/R"                        
+R3         100K                   BottomLayer R0603          5.6206       -14.9200     180      "RES 100K OHM 1% 1/10W 0603"                                                                  
+C8         10uF_10V               TopLayer    C0603          -3.8564      -16.9103     0        "Cap Ceramic 10uF 10V X5R 10% Pad SMD 0603 85C T/R"                                           
+C7         1uF_25V                TopLayer    C0603          -6.9693      -26.0973     0        "1µF Multilayer Ceramic Capacitor MLCC 25 V; X7R Dielectric 0603 Surface Mount"               
+C6         10uF_10V               TopLayer    C0603          5.6388       -6.1580      0        "Cap Ceramic 10uF 10V X5R 10% Pad SMD 0603 85C T/R"                                           
+C5         0.1uF_25V              BottomLayer C0603          5.6206       -13.4675     0        "100nF Multilayer Ceramic Capacitor MLCC25 V; X7R Dielectric 0603 Surface Mount"              
+C4         1uF_25V                BottomLayer C0603          5.6288       -10.5678     180      "1µF Multilayer Ceramic Capacitor MLCC 25 V; X7R Dielectric 0603 Surface Mount"               
+C3         0.1uF_25V              TopLayer    C0603          5.6388       -16.1459     0        "100nF Multilayer Ceramic Capacitor MLCC25 V; X7R Dielectric 0603 Surface Mount"              
+C1         1uF_25V                TopLayer    C0603          -6.9693      -18.8731     0        "1µF Multilayer Ceramic Capacitor MLCC 25 V; X7R Dielectric 0603 Surface Mount"               

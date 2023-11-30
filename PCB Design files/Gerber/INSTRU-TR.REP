@@ -1,0 +1,351 @@
+*************************************************************
+FileName = INSTRU-TR.GBR
+AutoAperture = True
+*************************************************************
+Generating : TOP
+      File : INSTRU-TR_Copper_Signal_Top.gbr
+
+    Adding Layer      : TOP
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D12
+    D13
+    D14
+    D15
+    D21
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+*************************************************************
+
+*************************************************************
+Generating : Bottom Assembly
+      File : INSTRU-TR_Bottom_Assembly.gbr
+
+    Adding Layer      : Bottom Assembly
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Top Assembly
+      File : INSTRU-TR_Top_Assembly.gbr
+
+    Adding Layer      : Top Assembly
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Bottom Courtyard
+      File : INSTRU-TR_Bottom_Courtyard.gbr
+
+    Adding Layer      : Bottom Courtyard
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Courtyard
+      File : INSTRU-TR_Top_Courtyard.gbr
+
+    Adding Layer      : Top Courtyard
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : ManufacturingNotes
+      File : INSTRU-TR_ManufacturingNotes.gbr
+
+    Adding Layer      : ManufacturingNotes
+
+
+Used DCodes :
+    D28
+    D50
+    D51
+*************************************************************
+
+*************************************************************
+Generating : BoardOutline
+      File : INSTRU-TR_BoardOutline.gbr
+
+    Adding Layer      : BoardOutline
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : INSTRU-TR_Pads_Bot.gbr
+
+    Adding Layer      : BOTTOM
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D21
+    D24
+    D25
+    D35
+    D36
+    D40
+    D41
+*************************************************************
+
+*************************************************************
+Generating : Top 3D Body
+      File : INSTRU-TR_Top_3D_Body.gbr
+
+    Adding Layer      : Top 3D Body
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom 3D
+      File : INSTRU-TR_Bottom_3D.gbr
+
+    Adding Layer      : Bottom 3D
+
+
+Used DCodes :
+    D49
+*************************************************************
+
+*************************************************************
+Generating : Top 3D
+      File : INSTRU-TR_Top_3D.gbr
+
+    Adding Layer      : Top 3D
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : INSTRU-TR_Keep-out.gbr
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : INSTRU-TR_Legend_Bot.gbr
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D10
+    D28
+*************************************************************
+
+*************************************************************
+Generating : BOTTOM
+      File : INSTRU-TR_Copper_Signal_Bot.gbr
+
+    Adding Layer      : BOTTOM
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D21
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : INSTRU-TR_Soldermask_Top.gbr
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : TOP
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : INSTRU-TR_Paste_Bot.gbr
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : BOTTOM
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D40
+    D41
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : INSTRU-TR_Soldermask_Bot.gbr
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : BOTTOM
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D20
+    D21
+    D22
+    D23
+    D24
+    D47
+    D48
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : INSTRU-TR_Pads_Top.gbr
+
+    Adding Layer      : TOP
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D15
+    D21
+    D24
+    D25
+    D35
+    D36
+*************************************************************
+
+*************************************************************
+Generating : Bottom 3D Body
+      File : INSTRU-TR_Bottom_3D_Body.gbr
+
+    Adding Layer      : Bottom 3D Body
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : INSTRU-TR_Mechanical_15.gbr
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : INSTRU-TR_Paste_Top.gbr
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : TOP
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : INSTRU-TR_Legend_Top.gbr
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Profile
+      File : INSTRU-TR_Profile.gbr
+
+
+Used DCodes :
+    D52
+*************************************************************
+
