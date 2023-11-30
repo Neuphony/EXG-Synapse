@@ -1,0 +1,8 @@
+DRC Rules Export File for PCB: E:\ARUN PROJECTS\NEUPHONY\NEUPHONY-NEW-DESIGN\INSTRU-AMP\INSTRU-TR.PcbDoc
+RuleKind=Width|RuleName=PWR|Scope=Board|Minimum=7.87
+RuleKind=Clearance|RuleName=USB|Scope=Board|Minimum=5.91
+RuleKind=Clearance|RuleName=ADS|Scope=Board|Minimum=5.91
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=7.87
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=1.97
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=5.91
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
