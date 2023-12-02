@@ -9,7 +9,7 @@ unsigned long interval = 4; // Interval between samples in milliseconds (1000 ms
 // Sampling rate: 250.0 Hz, frequency: [0.5, 47.0] Hz.
 // Filter is order 4, implemented as second-order sections (biquads).
 // Reference: https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html
-float bandpass(float input)
+float eeg_filter(float input)
 {
   float output = input;
   {
@@ -82,16 +82,14 @@ float bandstop_filter(float input)
 }
 
 float apply_filters(float input_signal){
-  float ecg_filter_out = ecg_filter(input_signal);
-  float band_stop_out = bandstop_filter(ecg_filter_out);
+  float eeg_filter_out = eeg_filter(input_signal);
+  float band_stop_out = bandstop_filter(eeg_filter_out);
   return band_stop_out;
 }
 
 void setup() {
   Serial.begin(115200); // Initialise serial communication
-  // Serial.println("serial begin");
-  setupBLE();
-  // Serial.println("ble begin");
+  setupBLE(); // Initialise BLE Server
 }
 
 void loop() {
