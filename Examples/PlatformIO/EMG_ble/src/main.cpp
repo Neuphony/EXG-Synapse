@@ -84,17 +84,16 @@ float bandstop_filter(float input)
 
 float apply_filters(float input_signal){
   float emg_filter_out = emg_filter(input_signal);
-  float band_stop_out = bandstop_filter(ecg_filter_out);
+  float band_stop_out = bandstop_filter(emg_filter_out);
   return band_stop_out;
 }
 
 void setup() {
   Serial.begin(115200); // Initialise serial communication
-  setupBLE();
+  setupBLE(); // Initialise BLE Server
 }
 
 void loop() {
-  uint8_t * value;
   unsigned long currentMillis = millis(); // Get the current time in milliseconds
   
   if (currentMillis - previousMillis >= interval) {

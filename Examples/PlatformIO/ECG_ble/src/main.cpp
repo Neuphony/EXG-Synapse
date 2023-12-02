@@ -89,11 +89,10 @@ float apply_filters(float input_signal){
 
 void setup() {
   Serial.begin(115200); // Initialise serial communication
-  setupBLE();
+  setupBLE(); // Initialise BLE Server
 }
 
 void loop() {
-  uint8_t * value;
   unsigned long currentMillis = millis(); // Get the current time in milliseconds
   
   if (currentMillis - previousMillis >= interval) {

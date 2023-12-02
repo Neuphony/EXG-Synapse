@@ -1,7 +1,8 @@
 #include <Arduino.h>
 
-#define BAUD_RATE 115200
-#define INPUT_PIN 15
+const int sensorPin = A0; // Analog input pin
+unsigned long previousMillis = 0; // Variable to store the last time a sample was taken
+unsigned long interval = 4; // Interval between samples in milliseconds (1000 ms / 250 samples). Change as per requirement
 
 // Band-Pass Butterworth IIR digital filter, generated using filter_gen.py.
 // Sampling rate: 250.0 Hz, frequency: [0.5, 47.0] Hz.
@@ -79,9 +80,15 @@ float bandstop_filter(float input)
   }
   return output;
 }
+
+float apply_filters(float input_signal){
+  float eeg_filter_out = eeg_filter(input_signal);
+  float band_stop_out = bandstop_filter(eeg_filter_out);
+  return band_stop_out;
+}
+
 void setup() {
-  // Serial connection begin
-  Serial.begin(BAUD_RATE);
+  Serial.begin(115200);
 }
  
 void loop() {
