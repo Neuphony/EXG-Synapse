@@ -13,7 +13,7 @@ Neuphony EXG Synapse is an innovative, hexagon-shaped chip designed for recordin
 EXG Synapse has configuration options in terms of gain and bandpass filter bandwidth. The user can modify these values depending on the use case. Here is an image showing the resistor pad R9(for gain) and capacitor pad C2(for filter bandwidth).
 
     
-    ![Untitled](Untitled.png)
+    ![Configuration](Configuration.png)
     
 
 1. **Connection with ESP32**
@@ -36,6 +36,6 @@ Check above image for correct electrode placement
 Serial : The Lab Streaming Layer (LSL) is a system designed for real-time data streaming and recording. We have provided a python script located in the [GitHub repository](https://github.com/Neuphony/EXG-Synapse) used to read the data from serial and create a LSL stream. The stream created by the script can be easily visualized using a LSL-compatible software such as **[BrainVision LSL Viewer](https://pressrelease.brainproducts.com/lsl-viewer/).** It can be downloaded for free using this [link](https://www.brainproducts.com/downloads/more-software/#utilities).
 
     
-    ![Untitled](EEG/Untitled.png)
+    ![EEG_data_screen](EEG/EEG_data_screen.png)
     
     BLE : If flashed with the code provided under software\Arduino\ble, ESP32 will stream data continously over BLE. You can create a client side interface to read this data and use it for further applications.

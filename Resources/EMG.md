@@ -13,7 +13,7 @@ Neuphony EXG Synapse is an innovative, hexagon-shaped chip designed for recordin
 4. **PCB Configuration:**
 EXG Synapse has configuration options in terms of gain and bandpass filter bandwidth. The user can modify these values depending on the use case. Here is an image showing the resistor pad R9(for gain) and capacitor pad C2(for filter bandwidth).
 
-![Untitled](Untitled.png)
+![Configuration](Configuration.png)
 
 1. **Connection with ESP32**
 EXG Synapse requires only three wires to connect to any MCU. 3V3 connects to the 3V3 pin on the ESP32 and GND to GND pin on the ESP32. The Output of EXG Synapse can be connected to any ADC pin of ESP32 and configured as an analog input to read the data.
