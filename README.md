@@ -222,5 +222,5 @@ Hardware - CERN-OHL-S-2.0
 Software - MIT
 Documentation - CC BY-SA 4.0</p>
 <p>Certification - </p>
-<p><img src="Resources/OSHWACertificate.png" alt="OSHWACertificate.png" style="width:200px;">, <img src="Resources/License.png" alt="License.png" style="width:400px;"></p>
+<p><img src="Resources/OSHWACertificate.png" alt="OSHWACertificate.png" style="width:200px;">, <img src="Resources/License.png" alt="License.png" style="width:300px;"></p>
 <!-- <p><img src="Resources/License.png" alt="License.png" style="width:200px;"></p> -->
