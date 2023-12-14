@@ -71,7 +71,7 @@ Check above image for correct electrode placement
 Serial : The Lab Streaming Layer (LSL) is a system designed for real-time data streaming and recording. We have provided a python script located in the [GitHub repository](https://github.com/Neuphony/EXG-Synapse) used to read the data from serial and create a LSL stream. The stream created by the script can be easily visualized using a LSL-compatible software such as **[BrainVision LSL Viewer](https://pressrelease.brainproducts.com/lsl-viewer/).** It can be downloaded for free using this [link](https://www.brainproducts.com/downloads/more-software/#utilities).
 
     
-    ![Untitled](Resources/EEG/Untitled.png)
+    ![EEG_data_screen](Resources/EEG/EEG_data_screen.png)
     
     BLE : If flashed with the code provided under software\Arduino\ble, ESP32 will stream data continously over BLE. You can create a client side interface to read this data and use it for further applications.
 
@@ -111,7 +111,7 @@ Check above image for correct electrode placement
 Serial : The Lab Streaming Layer (LSL) is a system designed for real-time data streaming and recording. We have provided a python script located in the [GitHub repository](https://github.com/Neuphony/EXG-Synapse) used to read the data from serial and create a LSL stream. The stream created by the script can be easily visualized using a LSL-compatible software such as **[BrainVision LSL Viewer](https://pressrelease.brainproducts.com/lsl-viewer/).** It can be downloaded for free using this [link](https://www.brainproducts.com/downloads/more-software/#utilities).
 
     
-    ![Untitled](Resources/ECG/Untitled.png)
+    ![ECG_data_screen](Resources/ECG/ECG_data_screen.png)
     
     BLE : If flashed with the code provided under software\Arduino\ble, ESP32 will stream data continously over BLE. You can create a client side interface to read this data and use it for further applications.
 
@@ -201,7 +201,7 @@ Serial : The Lab Streaming Layer (LSL) is a system designed for real-time data s
 
 **Horizontal EOG Data**
     
-![Untitled](Resources/EOG/Untitled.png)
+![hEOG_data_screen](Resources/EOG/hEOG_data_screen.png)
 
 **Vertical EOG Data**
     
