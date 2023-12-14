@@ -54,7 +54,7 @@ EXG Synapse has configuration options in terms of gain and bandpass filter bandw
 1. **Connection with ESP32**
 EXG Synapse requires only three wires to connect to any MCU. 3V3 connects to the 3V3 pin on the ESP32 and GND to GND pin on the ESP32. The Output of EXG Synapse can be connected to any ADC pin of ESP32 and configured as an analog input to read the data.
 
-![EEG.png](Resources/EEG%200fb3358243c8403793fba81bb3e7a900/EEG.png)
+![EEG.png](Resources/EEG/EEG.png)
 
 1. **Flashing Code on ESP32**
 To flash the required code on ESP32, you need to install Arduino IDE and setup for flashing to an ESP32. You can follow [this guide](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/installing.html) if you don’t find your board listed in Arduino. Once your board is added to Arduino, you can go to [this GitHub repository](https://github.com/Neuphony/EXG-Synapse), here you will find all the necessary files for acquiring the data using EXG Synapse.
@@ -71,14 +71,14 @@ Check above image for correct electrode placement
 Serial : The Lab Streaming Layer (LSL) is a system designed for real-time data streaming and recording. We have provided a python script located in the [GitHub repository](https://github.com/Neuphony/EXG-Synapse) used to read the data from serial and create a LSL stream. The stream created by the script can be easily visualized using a LSL-compatible software such as **[BrainVision LSL Viewer](https://pressrelease.brainproducts.com/lsl-viewer/).** It can be downloaded for free using this [link](https://www.brainproducts.com/downloads/more-software/#utilities).
 
     
-    ![Untitled](Resources/EEG%200fb3358243c8403793fba81bb3e7a900/Untitled.png)
+    ![Untitled](Resources/EEG/Untitled.png)
     
     BLE : If flashed with the code provided under software\Arduino\ble, ESP32 will stream data continously over BLE. You can create a client side interface to read this data and use it for further applications.
 
 
 # ECG
 
-1. W**hat is ECG?**
+1. **What is ECG?**
 ECG stands for Electrocardiogram. It is a medical test that measures and records the electrical activity of the heart. The ECG helps in diagnosing various heart conditions and evaluating the heart's overall health.
 
 1. **What is EXG Synapse?**
@@ -95,7 +95,7 @@ EXG Synapse has configuration options in terms of gain and bandpass filter bandw
 1. **Connection with ESP32**
 EXG Synapse requires only three wires to connect to any MCU. 3V3 connects to the 3V3 pin on the ESP32 and GND to GND pin on the ESP32. The Output of EXG Synapse can be connected to any ADC pin of ESP32 and configured as an analog input to read the data.
 
-![ECG.png](Resources/ECG%20fd74b5218530485baab3d220836dfc0d/ECG.png)
+![ECG.png](Resources/ECG/ECG.png)
 
 1. **Flashing Code on ESP32**
 To flash the required code on ESP32, you need to install Arduino IDE and setup for flashing to an ESP32. You can follow [this guide](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/installing.html) if you don’t find your board listed in Arduino. Once your board is added to Arduino, you can go to [this GitHub repository](https://github.com/Neuphony/EXG-Synapse), here you will find all the necessary files for acquiring the data using EXG Synapse.
@@ -111,7 +111,7 @@ Check above image for correct electrode placement
 Serial : The Lab Streaming Layer (LSL) is a system designed for real-time data streaming and recording. We have provided a python script located in the [GitHub repository](https://github.com/Neuphony/EXG-Synapse) used to read the data from serial and create a LSL stream. The stream created by the script can be easily visualized using a LSL-compatible software such as **[BrainVision LSL Viewer](https://pressrelease.brainproducts.com/lsl-viewer/).** It can be downloaded for free using this [link](https://www.brainproducts.com/downloads/more-software/#utilities).
 
     
-    ![Untitled](Resources/ECG%20fd74b5218530485baab3d220836dfc0d/Untitled.png)
+    ![Untitled](Resources/ECG/Untitled.png)
     
     BLE : If flashed with the code provided under software\Arduino\ble, ESP32 will stream data continously over BLE. You can create a client side interface to read this data and use it for further applications.
 
@@ -136,7 +136,7 @@ EXG Synapse has configuration options in terms of gain and bandpass filter bandw
 1. **Connection with ESP32**
 EXG Synapse requires only three wires to connect to any MCU. 3V3 connects to the 3V3 pin on the ESP32 and GND to GND pin on the ESP32. The Output of EXG Synapse can be connected to any ADC pin of ESP32 and configured as an analog input to read the data.
 
-![EMG.png](Resources/EMG%209782323bfa9f4984893c2f4c79499155/EMG.png)
+![EMG.png](Resources/EMG/EMG.png)
 
 1. **Flashing Code on ESP32**
 To flash the required code on ESP32, you need to install Arduino IDE and setup for flashing to an ESP32. You can follow [this guide](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/installing.html) if you don’t find your board listed in Arduino. Once your board is added to Arduino, you can go to [this GitHub repository](https://github.com/Neuphony/EXG-Synapse), here you will find all the necessary files for acquiring the data using EXG Synapse.
@@ -153,7 +153,7 @@ Before placing the electrode, skin surface must be cleaned with an alcohol based
 Serial : The Lab Streaming Layer (LSL) is a system designed for real-time data streaming and recording. We have provided a python script located in the [GitHub repository](https://github.com/Neuphony/EXG-Synapse) used to read the data from serial and create a LSL stream. The stream created by the script can be easily visualized using a LSL-compatible software such as **[BrainVision LSL Viewer](https://pressrelease.brainproducts.com/lsl-viewer/).** It can be downloaded for free using this [link](https://www.brainproducts.com/downloads/more-software/#utilities).
 
     
-    ![EMG - Data Screen.png](Resources/EMG%209782323bfa9f4984893c2f4c79499155/EMG_-_Data_Screen.png)
+    ![EMG - Data Screen.png](Resources/EMG/EMG_-_Data_Screen.png)
     
     BLE : If flashed with the code provided under software\Arduino\emg\ble, ESP32 will stream data continously over BLE. You can create a client side interface to read this data and use it for further applications.
 
@@ -179,11 +179,11 @@ EXG Synapse requires only three wires to connect to any MCU. 3V3 connects to the
 
 **Horizontal Eye Movements**
 
-![hEOG.png](Resources/EOG%204a754757329e42eda3236df74f409dec/hEOG.png)
+![hEOG.png](Resources/EOG/hEOG.png)
 
 **Vertical Eye Movements**
 
-![vEOG.png](Resources/EOG%204a754757329e42eda3236df74f409dec/vEOG.png)
+![vEOG.png](Resources/EOG/vEOG.png)
 
 1. **Flashing Code on ESP32**
 To flash the required code on ESP32, you need to install Arduino IDE and setup for flashing to an ESP32. You can follow [this guide](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/installing.html) if you don’t find your board listed in Arduino. Once your board is added to Arduino, you can go to [this GitHub repository](https://github.com/Neuphony/EXG-Synapse), here you will find all the necessary files for acquiring the data using EXG Synapse.
@@ -201,11 +201,11 @@ Serial : The Lab Streaming Layer (LSL) is a system designed for real-time data s
 
 **Horizontal EOG Data**
     
-![Untitled](Resources/EOG%204a754757329e42eda3236df74f409dec/Untitled.png)
+![Untitled](Resources/EOG/Untitled.png)
 
 **Vertical EOG Data**
     
-![vEOG- data screen.png](Resources/EOG%204a754757329e42eda3236df74f409dec/vEOG-_data_screen.png)
+![vEOG- data screen.png](Resources/EOG/vEOG-_data_screen.png)
 
 BLE : If flashed with the code provided under software\Arduino\eog\ble, ESP32 will stream data continously over BLE. You can create a client side interface to read this data and use it for further applications.
 
