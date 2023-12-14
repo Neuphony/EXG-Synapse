@@ -10,20 +10,20 @@
 </li>
 <li><p><strong>PCB Configuration</strong>  </p>
 <p>  EXG Synapse has configuration options in terms of gain and bandpass filter bandwidth. The user can modify these values depending on the use case. Here is an image showing the resistor pad R9(for gain) and capacitor pad C2(for filter bandwidth).</p>
-<p>  <img src="Resources/Untitled.png" alt="Untitled"></p>
+<p>  <img src="Resources/Synapse.png" alt="Synapse"></p>
 </li>
 <li><p><strong>Connection with ESP32</strong>  </p>
 <p>  EXG Synapse requires only three wires to connect to any MCU. 3V3 connects to the 3V3 pin on the ESP32 and GND to GND pin on the ESP32. The Output of EXG Synapse can be connected to any ADC pin of ESP32 and configured as an analog input to read the data.</p>
-<p>  <img src="Resources/Untitled%201.png" alt="Untitled"></p>
+<p>  <img src="Resources/ESPConnection.png" alt="ESPConnection"></p>
 </li>
 <li><p><strong>Flashing Code on ESP32</strong>  </p>
 <p>  To flash the required code on ESP32, you need to install Arduino IDE and setup for flashing to an ESP32. You can follow <a href="https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/installing.html">this guide</a> if you don’t find your board listed in Arduino. Once your board is added to Arduino, you can go to <a href="https://github.com/Neuphony/EXG-Synapse">our GitHub repository</a>, here you will find all the necessary files for acquiring the data using EXG Synapse.</p>
 <p>  Navigate to the folder of your choice (serial or BLE), and download the required .ino (EEG, ECG, EMG, EOG). Now compile and upload the code on your board.</p>
 <p>  Please follow the screenshots given below.</p>
 <p>  <strong>Board selection:</strong></p>
-<p>  <img src="Resources/Untitled%202.png" alt="Untitled"></p>
+<p>  <img src="Resources/BoardSelection.png" alt="BoardSelectiond"></p>
 <p>  <strong>COM Port selection:</strong></p>
-<p>  <img src="Resources/Untitled%202.png" alt="Untitled"></p>
+<p>  <img src="Resources/BoardSelection.png" alt="BoardSelection"></p>
 </li>
 <li><p><strong>Skin Preparation</strong>  </p>
 <p>  Before placing the electrode, skin surface must be cleaned with an alcohol based wet wipe and then Nuprep Gel can be used to enhance the signal quality as it reduces the skin impedance. You can follow <a href="https://www.youtube.com/watch?v=qQSClWIYUwM&t=76s">this guide</a> on how to use Nuprep Gel while preparing for data acquisition.</p>
@@ -48,7 +48,7 @@ Neuphony EXG Synapse is an innovative, hexagon-shaped chip designed for recordin
 EXG Synapse has configuration options in terms of gain and bandpass filter bandwidth. The user can modify these values depending on the use case. Here is an image showing the resistor pad R9(for gain) and capacitor pad C2(for filter bandwidth).
 
     
-    ![Untitled](Resources/Untitled.png)
+    ![Synapse](Resources/Synapse.png)
     
 
 1. **Connection with ESP32**
@@ -221,5 +221,6 @@ BLE : If flashed with the code provided under software\Arduino\eog\ble, ESP32 wi
 Hardware - CERN-OHL-S-2.0
 Software - MIT
 Documentation - CC BY-SA 4.0</p>
-<p>Certification - <strong>OSHWA</strong> Certification is currently under process</p>
-<p><img src="Resources/Screenshot_2023-12-01_at_4.50.37_PM.png" alt="Screenshot 2023-12-01 at 4.50.37 PM.png"></p>
+<p>Certification - </p>
+<p><img src="Resources/OSHWACertificate.png" alt="OSHWACertificate.png"></p>
+<p><img src="Resources/License.png" alt="License.png"></p>
