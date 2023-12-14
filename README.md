@@ -216,7 +216,7 @@ BLE : If flashed with the code provided under software\Arduino\eog\ble, ESP32 wi
 <p><strong>Pinout</strong></p>
 <p><img src="Resources/Pinout.png" alt="Pinout.png"></p>
 <p><strong>Schematic</strong></p>
-<p><img src="Resources/Screenshot_2023-12-01_at_4.57.04_PM.png" alt="Screenshot 2023-12-01 at 4.57.04 PM.png"></p>
+<p><img src="Resources/Schematic.png" alt="Schematic.png"></p>
 <p><strong>Licenses</strong>
 Hardware - CERN-OHL-S-2.0
 Software - MIT
