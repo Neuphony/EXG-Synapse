@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+# EXG Synapse
+
+Neuphony EXG Synapse is an innovative, Hexagon shaped chip designed for recording high-quality biopotential signals from various regions of the body, including the heart (ECG), brain (EEG), eyes (EOG), and muscles (EMG). Serving as a robust analog-front-end (AFE) biopotential signal-acquisition board, the Neuphony EXG Synapse can seamlessly integrate with a range of microcontroller units (MCUs) or single-board computers (SBCs) equipped with an analog-to-digital converter (ADC). Compatible platforms include popular options such as Arduino UNO & Nano, Espressif ESP32 and more.
+This versatile device also interfaces effortlessly with dedicated ADCs like the Texas Instruments ADS1115 and ADS131M0x, expanding its compatibility and flexibility for diverse applications. The Neuphony EXG Synapse empowers users to explore and capture publication-grade biopotential signals, making it a valuable tool for researchers, developers, and enthusiasts in the field of bioelectronics and health monitoring.
+
+## Hardware
+
+=======
 <h1 id="github---readme">Github - Readme</h1>
 <p>Front View<br>        <img src="Resources/Photo_-_Front_View.png" alt="front"></p>
 <p>Rear View<br>        <img src="Resources/Photo_-_Rear_View.png" alt="rear"></p>
@@ -223,3 +232,4 @@ Software - MIT
 Documentation - CC BY-SA 4.0</p>
 <p>Certification - <strong>OSHWA</strong> Certification is currently under process</p>
 <p><img src="Resources/Screenshot_2023-12-01_at_4.50.37_PM.png" alt="Screenshot 2023-12-01 at 4.50.37 PM.png"></p>
+>>>>>>> 03fdc554d099d1614c30e68a8ba9a1c4add501d9
