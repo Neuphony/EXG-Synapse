@@ -225,6 +225,6 @@ Documentation - CC BY-SA 4.0</p>
 <!-- <p><img src="Resources/OSHWACertificate.png" alt="OSHWACertificate.png" style="width:200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Resources/License.png" alt="License.png" style="width:300px;"></p>
 <a href="https://certification.oshwa.org/in000026.html"><img src="graphics/misc/OSHW_mark_IN000026.png" width="300" alt="Open Source Hardware Certification mark"/></a> -->
 
-<p><a href="https://certification.oshwa.org/in000049.html"><img src="Resources/OSHWACertificate.png" style="width:300px; alt="Open Source Hardware Certification/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="License-Agreement-Synapse.md"><img src="Resources/License.png" style = "width:400px;" alt="Open Source Licenses Agreement"/></a></p>
+<p><a href="https://certification.oshwa.org/in000049.html"><img src="Resources/OSHWACertificate.png" style="width:200px; alt="Open Source Hardware Certification/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="License-Agreement-Synapse.md"><img src="Resources/License.png" style = "width:200px;" alt="Open Source Licenses Agreement"/></a></p>
 
 <!-- <p><img src="Resources/License.png" alt="License.png" style="width:200px;"></p> -->
