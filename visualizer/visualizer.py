@@ -145,7 +145,7 @@ class SerialPlotter(pg.GraphicsLayoutWidget):
         self.channels = channels
         self.num_channels = len(channels)
         self.data_length = data_length
-        self.data = np.zeros((self.num_channels, data_length))
+        self.data = [np.zeros(data_length) for _ in range(self.num_channels)]  # Independent data storage for each channel
         self.curves = []
         self.init_ui(amplitude)
         self.com = port
@@ -157,31 +157,45 @@ class SerialPlotter(pg.GraphicsLayoutWidget):
         self.bp = bandpass_freq
         self.notch = notch_freq
         self.fs = sample_rate
+
+        # Filters for each channel (if needed)
+        self.filters = [self.create_filters() for _ in range(self.num_channels)]
+
  
+    def create_filters(self):
         b, a = iirfilter(5, Wn=self.bp, fs=self.fs, btype="bandpass", ftype="butter")
-        self.live_lfilter_bp = LiveLFilter(b, a)
+        live_lfilter_bp = LiveLFilter(b, a)
         q, p = iirfilter(5, [self.notch - 1.5, self.notch + 1.5], fs=self.fs, btype="bandstop", ftype="butter")
-        self.live_lfilter_notch = LiveLFilter(q, p)
+        live_lfilter_notch = LiveLFilter(q, p)
+        return (live_lfilter_bp, live_lfilter_notch)
  
+
     def init_ui(self, amplitude):
         for i, channel in enumerate(self.channels):
             p = self.addPlot(title=channel)
             p.showGrid(x=True, y=True)
             p.setYRange(-amplitude, amplitude, padding=0)
-            curve = p.plot(pen='g')
+            curve=p.plot(pen='g')
             self.curves.append(curve)
             if i < self.num_channels - 1:
                 self.nextRow()
  
     def update(self, data):
         if data != '\r\n' and data != '' and data != '\n':
-            print(data)
-            data_filtered = [self.live_lfilter_notch(self.live_lfilter_bp(float(value))) for value in data.split("\t")]
-            for i in range(self.num_channels):
-                self.data[i] = np.roll(self.data[i], -1)
-                self.data[i][-1] = float(data_filtered[i])
-            for i in range(self.num_channels):
-                self.curves[i].setData(self.data[i])
+            try:   
+                data_values = [float(value) for value in data.split("\t")]
+                print(data_values)
+                if len(data_values) != self.num_channels:
+                    raise ValueError("Data length mismatch")
+
+                for i in range(self.num_channels):
+                    filtered_value = self.filters[i][1](self.filters[i][0](data_values[i]))  # Apply filters
+                    self.data[i] = np.roll(self.data[i], -1)
+                    self.data[i][-1] = filtered_value
+                    self.curves[i].setData(self.data[i])
+            except ValueError as e:
+                print(f"Error processing data: {e}")
+                
  
  
 def create_channel_list(num_channels):
