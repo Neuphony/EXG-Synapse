@@ -169,6 +169,90 @@ class synapse {
    * This function filters out AC noise from the given input signal using
    * specified methods or algorithms based on the 'type' parameter.
    * Used a Band-Stop Butterworth IIR digital filter, generated using filter_gen.py to reject 50 Hz noise
+   * Sampling rate: 500.0 Hz, frequency: [49.0, 51.0] Hz for type = 50
+   * Sampling rate: 500.0 Hz, frequency: [59.0, 61.0] Hz. for type = 60
+   * Filter is order 4, implemented as second-order sections (biquads).
+   * Reference: https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html
+   *
+   * @param type   An integer indicating the type/method of noise removal.
+   * @param input  The input signal with AC noise.
+   * @return       The filtered signal without AC noise as a float.
+ */
+    float remove_AC_noise_EMG(uint8_t type, float input)
+    {
+      float output;
+      switch(type){
+        case 50:
+        output = input; 
+        {
+          static float z1, z2; // filter section state
+          float x = output - -1.59384315*z1 - 0.97689595*z2;
+          output = 0.96769481*x + -1.56588673*z1 + 0.96769481*z2;
+          z2 = z1;
+          z1 = x;
+        }
+        {
+          static float z1, z2; // filter section state
+          float x = output - -1.60526422*z1 - 0.97719645*z2;
+          output = 1.00000000*x + -1.61816175*z1 + 1.00000000*z2;
+          z2 = z1;
+          z1 = x;
+        }
+        {
+          static float z1, z2; // filter section state
+          float x = output - -1.59649601*z1 - 0.99027671*z2;
+          output = 1.00000000*x + -1.61816175*z1 + 1.00000000*z2;
+          z2 = z1;
+          z1 = x;
+        }
+        {
+          static float z1, z2; // filter section state
+          float x = output - -1.62390790*z1 - 0.99058117*z2;
+          output = 1.00000000*x + -1.61816175*z1 + 1.00000000*z2;
+          z2 = z1;
+          z1 = x;
+        }
+        return output;
+
+        case 60:
+        output = input;
+        {
+          static float z1, z2; // filter section state
+          float x = output - -1.43469171*z1 - 0.97692996*z2;
+          output = 0.96769481*x + -1.41094972*z1 + 0.96769481*z2;
+          z2 = z1;
+          z1 = x;
+        }
+        {
+          static float z1, z2; // filter section state
+          float x = output - -1.44787927*z1 - 0.97716243*z2;
+          output = 1.00000000*x + -1.45805238*z1 + 1.00000000*z2;
+          z2 = z1;
+          z1 = x;
+        }
+        {
+          static float z1, z2; // filter section state
+          float x = output - -1.43497551*z1 - 0.99031116*z2;
+          output = 1.00000000*x + -1.45805238*z1 + 1.00000000*z2;
+          z2 = z1;
+          z1 = x;
+        }
+        {
+          static float z1, z2; // filter section state
+          float x = output - -1.46678483*z1 - 0.99054671*z2;
+          output = 1.00000000*x + -1.45805238*z1 + 1.00000000*z2;
+          z2 = z1;
+          z1 = x;
+        }
+        return output;
+      }
+    }
+     /**
+   * @brief Removes AC noise from the input signal.
+   *
+   * This function filters out AC noise from the given input signal using
+   * specified methods or algorithms based on the 'type' parameter.
+   * Used a Band-Stop Butterworth IIR digital filter, generated using filter_gen.py to reject 50 Hz noise
    * Sampling rate: 250.0 Hz, frequency: [49.0, 51.0] Hz for type = 50
    * Sampling rate: 250.0 Hz, frequency: [59.0, 61.0] Hz. for type = 60
    * Filter is order 4, implemented as second-order sections (biquads).
@@ -183,7 +267,8 @@ class synapse {
       float output;
       switch(type){
         case 50:
-        output = input;
+        output = input; 
+        float output = input;
         {
           static float z1, z2; // filter section state
           float x = output - -0.58621390*z1 - 0.95447062*z2;
@@ -197,7 +282,7 @@ class synapse {
           output = 1.00000000*x + -0.61822923*z1 + 1.00000000*z2;
           z2 = z1;
           z1 = x;
-        }
+       }
         {
           static float z1, z2; // filter section state
           float x = output - -0.56822557*z1 - 0.98081132*z2;
@@ -216,6 +301,7 @@ class synapse {
 
         case 60:
         output = input;
+        float output = input;
         {
           static float z1, z2; // filter section state
           float x = output - -0.10398666*z1 - 0.95458249*z2;
@@ -243,7 +329,7 @@ class synapse {
           output = 1.00000000*x + -0.12562071*z1 + 1.00000000*z2;
           z2 = z1;
           z1 = x;
-        }
+       }
         return output;
       }
     }
@@ -262,7 +348,7 @@ class synapse {
 
     float apply_EMG_filters(float input_signal){
       float emg_filter_out = emg_filter(input_signal);
-      float band_stop_out = remove_AC_noise(50,emg_filter_out);
+      float band_stop_out = remove_AC_noise_EMG(50,emg_filter_out);
       return band_stop_out;
     }
 
