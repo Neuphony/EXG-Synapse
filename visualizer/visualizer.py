@@ -65,6 +65,34 @@ class ConfigDialog(QDialog):
         self.sec_select.setValue(5)
         sec_layout.addWidget(self.sec_select)
         layout.addLayout(sec_layout)
+       
+        # Bandpass Filter Cutoff
+        bp_layout = QHBoxLayout()
+        self.bp_label = QLabel('Bandpass Filter Cutoff (Hz):', self)
+        bp_layout.addWidget(self.bp_label)
+        self.bp_low_select = QSpinBox(self)
+        self.bp_low_select.setRange(1, 100)  # Example range
+        self.bp_low_select.setValue(1)
+        bp_layout.addWidget(self.bp_low_select)
+ 
+        self.bp_high_select = QSpinBox(self)
+        self.bp_high_select.setRange(1, 100)  # Example range
+        self.bp_high_select.setValue(45)
+        self.bp_low_select.setFixedSize(45,25)
+        self.bp_high_select.setFixedSize(45,25)
+        bp_layout.addWidget(self.bp_high_select)
+        layout.addLayout(bp_layout)
+ 
+        # Notch Filter Frequency
+        notch_layout = QHBoxLayout()
+        self.notch_label = QLabel('Notch Filter Frequency (Hz):', self)
+        notch_layout.addWidget(self.notch_label)
+        self.notch_select = QSpinBox(self)
+        self.notch_select.setRange(40, 60)  # Example range
+        self.notch_select.setValue(50)
+        self.notch_select.setFixedSize(100,25)
+        notch_layout.addWidget(self.notch_select)
+        layout.addLayout(notch_layout)
  
         # Buttons
         button_layout = QHBoxLayout()
@@ -81,7 +109,16 @@ class ConfigDialog(QDialog):
         self.com_select.addItems(available_ports)
  
     def get_config(self):
-        return self.com_select.currentText(), self.amp_select.value(), self.ch_select.value(), self.sec_select.value()
+        return {
+            "type": "COM",
+            "port": self.com_select.currentText(),
+            "amplitude": self.amp_select.value(),
+            "channels": self.ch_select.value(),
+            "duration": self.sec_select.value(),
+            "bp_low": self.bp_low_select.value(),
+            "bp_high": self.bp_high_select.value(),
+            "notch": self.notch_select.value()
+        }
  
  
 class LiveFilter:
@@ -157,10 +194,10 @@ class SerialPlotter(pg.GraphicsLayoutWidget):
         self.bp = bandpass_freq
         self.notch = notch_freq
         self.fs = sample_rate
-
+ 
         # Filters for each channel (if needed)
         self.filters = [self.create_filters() for _ in range(self.num_channels)]
-
+ 
  
     def create_filters(self):
         b, a = iirfilter(5, Wn=self.bp, fs=self.fs, btype="bandpass", ftype="butter")
@@ -169,7 +206,7 @@ class SerialPlotter(pg.GraphicsLayoutWidget):
         live_lfilter_notch = LiveLFilter(q, p)
         return (live_lfilter_bp, live_lfilter_notch)
  
-
+ 
     def init_ui(self, amplitude):
         for i, channel in enumerate(self.channels):
             p = self.addPlot(title=channel)
@@ -182,12 +219,12 @@ class SerialPlotter(pg.GraphicsLayoutWidget):
  
     def update(self, data):
         if data != '\r\n' and data != '' and data != '\n':
-            try:   
+            try:  
                 data_values = [float(value) for value in data.split("\t")]
                 print(data_values)
                 if len(data_values) != self.num_channels:
                     raise ValueError("Data length mismatch")
-
+ 
                 for i in range(self.num_channels):
                     filtered_value = self.filters[i][1](self.filters[i][0](data_values[i]))  # Apply filters
                     self.data[i] = np.roll(self.data[i], -1)
@@ -195,7 +232,7 @@ class SerialPlotter(pg.GraphicsLayoutWidget):
                     self.curves[i].setData(self.data[i])
             except ValueError as e:
                 print(f"Error processing data: {e}")
-                
+               
  
  
 def create_channel_list(num_channels):
@@ -217,8 +254,11 @@ if __name__ == '__main__':
  
     config_dialog = ConfigDialog()
     if config_dialog.exec_() == QDialog.Accepted:
-        com_port, amplitude, no_of_channels, duration = config_dialog.get_config()
-        channels = create_channel_list(no_of_channels)
-        viewer = SerialPlotter(channels, duration*250, com_port, amplitude)
+        config = config_dialog.get_config()
+        channels = create_channel_list(config['channels'])
+        duration = int(config['duration'])*250
+        viewer = SerialPlotter(channels, duration, config['port'], config['amplitude'],
+                                   bandpass_freq=[config['bp_low'], config['bp_high']],
+                                   notch_freq=config['notch'])
         viewer.show()
         sys.exit(app.exec_())
