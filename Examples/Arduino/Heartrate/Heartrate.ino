@@ -1,7 +1,4 @@
-
-#include "synapse_ble.h"
 #include "synapse.h"
-
 
 const int sensorPin = 15; // Analog input pin
 unsigned long previousMillis = 0; // Variable to store the last time a sample was taken
