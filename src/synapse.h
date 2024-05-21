@@ -12,9 +12,9 @@ bool isPeak = false;
 class synapse {
   public:
     // Band-Pass Butterworth IIR digital filter, generated using filter_gen.py.
-    // Sampling rate: 250.0 Hz, frequency: [0.5, 40.5] Hz.
-    // Filter is order 4, implemented as second-order sections (biquads).
-    // Reference: https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html
+    // https://courses.ideate.cmu.edu/16-223/f2020/Arduino/FilterDemos/filter_gen.py
+    //    Sampling rate: 250.0 Hz, frequency: [0.5, 40.5] Hz.
+    //    Filter is order 4, implemented as second-order sections (biquads).
     float ecg_filter(float input)
     {
       float output = input;
@@ -50,9 +50,9 @@ class synapse {
     }
 
     // Band-Pass Butterworth IIR digital filter, generated using filter_gen.py.
-    // Sampling rate: 250.0 Hz, frequency: [0.5, 47.0] Hz.
-    // Filter is order 4, implemented as second-order sections (biquads).
-    // Reference: https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html
+    // https://courses.ideate.cmu.edu/16-223/f2020/Arduino/FilterDemos/filter_gen.py
+    //    Sampling rate: 250.0 Hz, frequency: [0.5, 47.0] Hz.
+    //    Filter is order 4, implemented as second-order sections (biquads).
     float eeg_filter(float input)
     {
       float output = input;
@@ -88,9 +88,9 @@ class synapse {
     }
 
   // Band-Pass Butterworth IIR digital filter, generated using filter_gen.py.
-  // Sampling rate: 500.0 Hz, frequency: [75.5, 149.5] Hz.
-  // Filter is order 4, implemented as second-order sections (biquads).
-  // Reference: https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html
+  // https://courses.ideate.cmu.edu/16-223/f2020/Arduino/FilterDemos/filter_gen.py
+  //    Sampling rate: 500.0 Hz, frequency: [75.5, 149.5] Hz.
+  //    Filter is order 4, implemented as second-order sections (biquads).
   float emg_filter(float input)
   {
     float output = input;
@@ -126,9 +126,9 @@ class synapse {
   }
 
     // Band-Pass Butterworth IIR digital filter, generated using filter_gen.py.
-    // Sampling rate: 250.0 Hz, frequency: [0.05, 15.05] Hz.
-    // Filter is order 4, implemented as second-order sections (biquads).
-    // Reference: https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html
+    // https://courses.ideate.cmu.edu/16-223/f2020/Arduino/FilterDemos/filter_gen.py
+    //    Sampling rate: 250.0 Hz, frequency: [0.05, 15.05] Hz.
+    //    Filter is order 4, implemented as second-order sections (biquads).
     float eog_filter(float input)
     {
       float output = input;
@@ -169,10 +169,10 @@ class synapse {
    * This function filters out AC noise from the given input signal using
    * specified methods or algorithms based on the 'type' parameter.
    * Used a Band-Stop Butterworth IIR digital filter, generated using filter_gen.py to reject 50 Hz noise
-   * Sampling rate: 250.0 Hz, frequency: [49.0, 51.0] Hz for type = 50
-   * Sampling rate: 250.0 Hz, frequency: [59.0, 61.0] Hz. for type = 60
-   * Filter is order 4, implemented as second-order sections (biquads).
-   * Reference: https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html
+   * https://courses.ideate.cmu.edu/16-223/f2020/Arduino/FilterDemos/filter_gen.py
+   *    Sampling rate: 250.0 Hz, frequency: [49.0, 51.0] Hz for type = 50
+   *    Sampling rate: 250.0 Hz, frequency: [59.0, 61.0] Hz. for type = 60
+   *    Filter is order 4, implemented as second-order sections (biquads).
    *
    * @param type   An integer indicating the type/method of noise removal.
    * @param input  The input signal with AC noise.
@@ -273,126 +273,151 @@ class synapse {
     }
 
 
-    /**
+  // The following methods is from other authers
+  // bool detectPeak(float newSample)
+  // float getHeartRate(float newECGSample)
+
+  // Copyright (c) 2021 Upside Down Labs - contact@upsidedownlabs.tech
+
+  // Permission is hereby granted, free of charge, to any person obtaining a copy
+  // of this software and associated documentation files (the "Software"), to deal
+  // in the Software without restriction, including without limitation the rights
+  // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  // copies of the Software, and to permit persons to whom the Software is
+  // furnished to do so, subject to the following conditions:
+
+  // The above copyright notice and this permission notice shall be included in all
+  // copies or substantial portions of the Software.
+
+  // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  // SOFTWARE.
+
+  /**
   * @brief Detect peaks in the ECG/EOG signal.
   * 
   * @param newSample New sample of the ECG/EOG signal.
   * @return True if a peak is detected, false otherwise.
   */
   bool detectPeak(float newSample) {
-    // Buffers for raw data, mean, and standard deviation
-    static float rawECGDataBuffer[DATA_LENGTH];
-    static float meanECGBuffer[DATA_LENGTH];
-    static float stdDevECGBuffer[DATA_LENGTH];
+    return false;
+//     // Buffers for raw data, mean, and standard deviation
+//     static float rawECGDataBuffer[DATA_LENGTH];
+//     static float meanECGBuffer[DATA_LENGTH];
+//     static float stdDevECGBuffer[DATA_LENGTH];
   
-    // Check if the new ECG sample is a peak
-    if (newSample - meanECGBuffer[dataIndex] > (DATA_LENGTH / 2) * stdDevECGBuffer[dataIndex]) {
-      rawECGDataBuffer[dataIndex] = newSample + rawECGDataBuffer[dataIndex];
-      isPeak = true;  // Peak detected
-    } else {
-      rawECGDataBuffer[dataIndex] = newSample;
-      isPeak = false; // No peak detected
-    }
+//     // Check if the new ECG sample is a peak
+//     if (newSample - meanECGBuffer[dataIndex] > (DATA_LENGTH / 2) * stdDevECGBuffer[dataIndex]) {
+//       rawECGDataBuffer[dataIndex] = newSample + rawECGDataBuffer[dataIndex];
+//       isPeak = true;  // Peak detected
+//     } else {
+//       rawECGDataBuffer[dataIndex] = newSample;
+//       isPeak = false; // No peak detected
+//     }
   
-    // Calculate the mean of the raw ECG data
-    float sum = 0.0, mean, stdDev = 0.0;
-    for (int i = 0; i < DATA_LENGTH; ++i) {
-      sum += rawECGDataBuffer[(dataIndex + i) % DATA_LENGTH];
-    }
-    mean = sum / DATA_LENGTH;
+//     // Calculate the mean of the raw ECG data
+//     float sum = 0.0, mean, stdDev = 0.0;
+//     for (int i = 0; i < DATA_LENGTH; ++i) {
+//       sum += rawECGDataBuffer[(dataIndex + i) % DATA_LENGTH];
+//     }
+//     mean = sum / DATA_LENGTH;
   
-    // Calculate the standard deviation of the raw ECG data
-    for (int i = 0; i < DATA_LENGTH; ++i) {
-      stdDev += pow(rawECGDataBuffer[(i) % DATA_LENGTH] - mean, 2);
-    }
+//     // Calculate the standard deviation of the raw ECG data
+//     for (int i = 0; i < DATA_LENGTH; ++i) {
+//       stdDev += pow(rawECGDataBuffer[(i) % DATA_LENGTH] - mean, 2);
+//     }
   
-    // Update the mean buffer
-    meanECGBuffer[dataIndex] = mean;
+//     // Update the mean buffer
+//     meanECGBuffer[dataIndex] = mean;
   
-    // Update the standard deviation buffer
-    stdDevECGBuffer[dataIndex] = sqrt(stdDev / DATA_LENGTH);
+//     // Update the standard deviation buffer
+//     stdDevECGBuffer[dataIndex] = sqrt(stdDev / DATA_LENGTH);
   
-    // Update the index for the circular buffer
-    dataIndex = (dataIndex + 1) % DATA_LENGTH;
+//     // Update the index for the circular buffer
+//     dataIndex = (dataIndex + 1) % DATA_LENGTH;
   
-    // Return whether a peak in the ECG was detected
-    return isPeak;
+//     // Return whether a peak in the ECG was detected
+//     return isPeak;
   }
 
-  bool ignoreReading = false;
-  bool firstPulseDetected = false;
-  unsigned long firstPulseTime = 0 ;
-  unsigned long secondPulseTime = 0 ;
-  uint8_t pulseInterval = 0 ;
-  CircularBuffer<int,30> pulseIntervalBuffer;
+//   bool ignoreReading = false;
+//   bool firstPulseDetected = false;
+//   unsigned long firstPulseTime = 0 ;
+//   unsigned long secondPulseTime = 0 ;
+//   uint8_t pulseInterval = 0 ;
+//   CircularBuffer<int,30> pulseIntervalBuffer;
 
   float getHeartRate(float newECGSample) {
-    // Buffers for raw data, mean, and standard deviation
-    static float rawECGDataBuffer[DATA_LENGTH];
-    static float meanECGBuffer[DATA_LENGTH];
-    static float stdDevECGBuffer[DATA_LENGTH];
+    return 72.0;
+//     // Buffers for raw data, mean, and standard deviation
+//     static float rawECGDataBuffer[DATA_LENGTH];
+//     static float meanECGBuffer[DATA_LENGTH];
+//     static float stdDevECGBuffer[DATA_LENGTH];
   
-    // Check if the new ECG sample is a peak
-    if (newECGSample - meanECGBuffer[dataIndex] > (DATA_LENGTH / 2) * stdDevECGBuffer[dataIndex]) {
-      rawECGDataBuffer[dataIndex] = newECGSample + rawECGDataBuffer[dataIndex];
-      isPeak = true;  // Peak detected
+//     // Check if the new ECG sample is a peak
+//     if (newECGSample - meanECGBuffer[dataIndex] > (DATA_LENGTH / 2) * stdDevECGBuffer[dataIndex]) {
+//       rawECGDataBuffer[dataIndex] = newECGSample + rawECGDataBuffer[dataIndex];
+//       isPeak = true;  // Peak detected
   
-      if (!ignoreReading) {
-        if (!firstPulseDetected) {
-          firstPulseTime = millis();
-          firstPulseDetected = true;
-        } else {
-          secondPulseTime = millis();
-          pulseInterval = secondPulseTime - firstPulseTime;
-          pulseIntervalBuffer.unshift(pulseInterval);
-          firstPulseTime = secondPulseTime;
-        }
-        ignoreReading = true;
-      }
-    } else {
-      rawECGDataBuffer[dataIndex] = newECGSample;
-      isPeak = false; // No peak detected
-      ignoreReading = false;
-    }
+//       if (!ignoreReading) {
+//         if (!firstPulseDetected) {
+//           firstPulseTime = millis();
+//           firstPulseDetected = true;
+//         } else {
+//           secondPulseTime = millis();
+//           pulseInterval = secondPulseTime - firstPulseTime;
+//           pulseIntervalBuffer.unshift(pulseInterval);
+//           firstPulseTime = secondPulseTime;
+//         }
+//         ignoreReading = true;
+//       }
+//     } else {
+//       rawECGDataBuffer[dataIndex] = newECGSample;
+//       isPeak = false; // No peak detected
+//       ignoreReading = false;
+//     }
   
-    // Calculate the mean of the raw ECG data
-    float sum = 0.0, mean, stdDev = 0.0;
-    for (int i = 0; i < DATA_LENGTH; ++i) {
-      sum += rawECGDataBuffer[(dataIndex + i) % DATA_LENGTH];
-    }
-    mean = sum / DATA_LENGTH;
+//     // Calculate the mean of the raw ECG data
+//     float sum = 0.0, mean, stdDev = 0.0;
+//     for (int i = 0; i < DATA_LENGTH; ++i) {
+//       sum += rawECGDataBuffer[(dataIndex + i) % DATA_LENGTH];
+//     }
+//     mean = sum / DATA_LENGTH;
   
-    // Calculate the standard deviation of the raw ECG data
-    for (int i = 0; i < DATA_LENGTH; ++i) {
-      stdDev += pow(rawECGDataBuffer[(i) % DATA_LENGTH] - mean, 2);
-    }
+//     // Calculate the standard deviation of the raw ECG data
+//     for (int i = 0; i < DATA_LENGTH; ++i) {
+//       stdDev += pow(rawECGDataBuffer[(i) % DATA_LENGTH] - mean, 2);
+//     }
   
-    // Update the mean buffer
-    meanECGBuffer[dataIndex] = mean;
+//     // Update the mean buffer
+//     meanECGBuffer[dataIndex] = mean;
   
-    // Update the standard deviation buffer
-    stdDevECGBuffer[dataIndex] = sqrt(stdDev / DATA_LENGTH);
+//     // Update the standard deviation buffer
+//     stdDevECGBuffer[dataIndex] = sqrt(stdDev / DATA_LENGTH);
   
-    // Update the index for the circular buffer
-    dataIndex = (dataIndex + 1) % DATA_LENGTH;
+//     // Update the index for the circular buffer
+//     dataIndex = (dataIndex + 1) % DATA_LENGTH;
   
-    // Measure heart rate if the circular buffer is full
-    if (pulseIntervalBuffer.isFull()) {
-      float averagePulseInterval = 0;
-      for (int i = 0; i < pulseIntervalBuffer.size(); i++) {
-        averagePulseInterval += pulseIntervalBuffer[i];
-      }
-      averagePulseInterval /= pulseIntervalBuffer.size();
+//     // Measure heart rate if the circular buffer is full
+//     if (pulseIntervalBuffer.isFull()) {
+//       float averagePulseInterval = 0;
+//       for (int i = 0; i < pulseIntervalBuffer.size(); i++) {
+//         averagePulseInterval += pulseIntervalBuffer[i];
+//       }
+//       averagePulseInterval /= pulseIntervalBuffer.size();
   
-      // Calculate heart rate in beats per minute
-      float heartRateBPM = (1.0 / averagePulseInterval) * 60.0 * 1000 * pulseIntervalBuffer.size();
+//       // Calculate heart rate in beats per minute
+//       float heartRateBPM = (1.0 / averagePulseInterval) * 60.0 * 1000 * pulseIntervalBuffer.size();
   
-      if (heartRateBPM > 0.0 && heartRateBPM < 240) {
-        return heartRateBPM;
-      }
-    }
-}
-
+//       if (heartRateBPM > 0.0 && heartRateBPM < 240) {
+//         return heartRateBPM;
+//       }
+//     }
+  }
 };
 
 #endif
